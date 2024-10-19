@@ -1,7 +1,7 @@
 import os
 
 from groq import Groq
-
+#chave na variavel de ambiente do windows 
 client = Groq(
     api_key=os.environ.get("GROQ_API_KEY"),
 )
