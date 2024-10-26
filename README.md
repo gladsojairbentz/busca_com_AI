@@ -1,4 +1,7 @@
-# **DuckDuckGobusca.py**
+**DuckDuckGobusca.py**
+
+
+
 
 Este código realiza uma busca no DuckDuckGo e extrai os links dos resultados da pesquisa.
 
@@ -38,7 +41,11 @@ pip install beautifulsoup4
 
 # 
 
-# **DuckDuckGobusca1.py**
+
+
+ **DuckDuckGobusca1.py**
+
+
 
 ######
 
@@ -90,9 +97,12 @@ pip install langchain_community
   ```
   python 
   ```
+
   
 
-# **busca_groq.py**
+ **busca_groq.py**
+
+ 
 
 #### Descrição do Código
 
@@ -139,9 +149,12 @@ pip install groq
   ```
   python 
   ```
+
   
 
-# busca_groq.py
+# busca_groq.py #
+
+
 
 #### Descrição do Código
 
@@ -199,7 +212,10 @@ pip install groq
   ```
   
 
-# busca_groq_v1.py
+
+# busca_groq_v1.py #
+
+
 
 #### Descrição do Código
 
@@ -249,7 +265,10 @@ pip install groq
   ```
   
 
-# wikipedia.py
+
+# wikipedia.py #
+
+
 
 #### Descrição do Código
 
@@ -299,9 +318,13 @@ pip install langchain_community
 3. **Execute o código**: No terminal, navegue até o diretório onde o arquivo `wikipedia_search.py` está salvo e execute o seguinte comando:
   
   python wikipedia_search.py
+
+
   
 
-# youtube.py
+# youtube.py #
+
+
 
 #### Descrição do Código
 
