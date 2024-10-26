@@ -152,7 +152,8 @@ pip install groq
 
   
 
-# busca_groq.py #
+** busca_groq.py **
+
 
 
 
@@ -213,7 +214,7 @@ pip install groq
   
 
 
-# busca_groq_v1.py #
+** busca_groq_v1.py **
 
 
 
@@ -266,7 +267,7 @@ pip install groq
   
 
 
-# wikipedia.py #
+** wikipedia.py **
 
 
 
@@ -322,7 +323,7 @@ pip install langchain_community
 
   
 
-# youtube.py #
+** youtube.py **
 
 
 
