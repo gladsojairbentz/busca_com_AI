@@ -360,3 +360,192 @@ pip install langchain_community
   python youtube_search.py
   
   ```
+
+
+
+tavilyclient.py
+
+#### Descrição do Código
+
+Este código Python utiliza a biblioteca Tavily para realizar uma consulta de busca e retornar os resultados.
+
+1. **Importação de Bibliotecas**:
+  
+  - `TavilyClient` da `tavily`: Biblioteca utilizada para interagir com o serviço de busca Tavily.
+2. **Instanciação do Cliente Tavily**:
+  
+  - `TavilyClient(api_key="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")`: Cria uma instância do cliente Tavily com a chave da API fornecida.
+3. **Execução da Consulta de Busca**:
+  
+  - `tavily_client.search(query)`: Envia uma consulta de busca com a query "Quem é Leo Messi?" e armazena o resultado em `response`.
+4. **Impressão do Resultado**:
+  
+  - `print(response)`: Imprime o resultado da busca no console.
+
+#### O que Instalar
+
+Para usar este código, você precisa instalar a biblioteca `tavily`. Você pode instalá-la usando pip:
+
+```
+pip install tavily
+```
+
+#### Como Executar
+
+1. **Instale a dependência**: Execute o comando acima no terminal para instalar a biblioteca `tavily`.
+  
+2. **Escreva o código**: Copie e cole o código Python em um arquivo, por exemplo, `tavily_search.py`.
+  
+3. **Execute o código**: No terminal, navegue até o diretório onde o arquivo `tavily_search.py` está salvo e execute o seguinte comando:
+  
+  ```
+  python tavily_search.py
+  
+  ```
+  
+
+# tavilycliente1
+
+#### Descrição do Código
+
+Este código Python realiza uma busca na API Tavily, processa a resposta com Langflow, detecta a linguagem da consulta e traduz a resposta para o idioma da consulta.
+
+1. **Importação de Bibliotecas**:
+  
+  - `TavilyClient` da `tavily`: Biblioteca utilizada para interagir com o serviço de busca Tavily.
+    
+  - `Langflow` da `langflow`: Biblioteca utilizada para processar textos.
+    
+  - `detect` da `langdetect`: Função para detectar o idioma de um texto.
+    
+  - `TextBlob` da `textblob`: Biblioteca para manipulação de textos, incluindo tradução.
+    
+2. **Instanciação do Cliente Tavily e Langflow**:
+  
+  - `TavilyClient(api_key="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")`: Cria uma instância do cliente Tavily com a chave da API fornecida.
+    
+  - `Langflow()`: Cria uma instância do Langflow.
+    
+3. **Funções Auxiliares**:
+  
+  - `detect_language(text)`: Detecta o idioma da consulta usando a função `detect` da biblioteca `langdetect`.
+    
+  - `translate_response(response, target_language)`: Traduz a resposta para o idioma da consulta usando `TextBlob`.
+    
+4. **Execução da Consulta de Busca**:
+  
+  - `tavily_client.search(query)`: Envia uma consulta de busca com a query "Quem é Leo Messi?" e armazena o resultado em `response`.
+5. **Processamento e Tradução da Resposta**:
+  
+  - `langflow.process(response)`: Processa a resposta usando Langflow.
+    
+  - `detect_language(query)`: Detecta o idioma da consulta.
+    
+  - `translate_response(processed_response, query_language)`: Traduz a resposta processada para o idioma da consulta.
+    
+6. **Impressão da Resposta**:
+  
+  - `print(f"Consulta: {query}")` e `print(f"Resposta: {translated_response}")`: Imprime a consulta e a resposta processada e traduzida no console.
+
+#### O que Instalar
+
+Para usar este código, você precisa instalar as seguintes bibliotecas:
+
+- `tavily`
+  
+- `langflow`
+  
+- `langdetect`
+  
+- `textblob`
+  
+
+Você pode instalá-las usando pip:
+
+bash
+
+Copiar
+
+```
+pip install tavily
+pip install langflow
+pip install langdetect
+pip install textblob
+```
+
+#### Como Executar
+
+1. **Instale as dependências**: Execute os comandos acima no terminal para instalar as bibliotecas necessárias.
+  
+2. **Escreva o código**: Copie e cole o código Python em um arquivo, por exemplo, `tavily_langflow_search.py`.
+  
+3. **Configure sua chave da API**: Certifique-se de ter a chave da API Tavily configurada corretamente.
+  
+4. **Execute o código**: No terminal, navegue até o diretório onde o arquivo `tavily_langflow_search.py` está salvo e execute o seguinte comando:
+  
+  ```
+  python tavily_langflow_search.py
+  
+  ```
+  
+
+# typing_import_union_list
+
+#### Descrição do Código
+
+Este código Python define um componente para realizar buscas na API Tavily utilizando a biblioteca LangChain. Aqui está um resumo de como ele funciona:
+
+1. **Importação de Bibliotecas**:
+  
+  - Importa vários módulos necessários, incluindo `Union` e `List` do módulo `typing`, `Tool` do módulo `langchain_core.tools`, `TavilySearchAPIWrapper` do módulo `langchain.utilities.tavily_search`, `TavilySearchResults` do módulo `langchain_community.tools.tavily_search`, `LCToolComponent` do módulo `langflow.base.langchain_utilities.model`, e tipos de entrada (`SecretStrInput`, `MultilineInput`, `IntInput`) do módulo `langflow.inputs`.
+    
+  - Importa `Dataclass` do módulo `langflow.schema`.
+    
+2. **Definição da Classe** `TavilySearchAPIComponent`:
+  
+  - A classe é uma subclasse de `LCToolComponent` e define o comportamento de um componente de busca na API Tavily.
+3. **Atributos da Classe**:
+  
+  - `display_name`, `description`, `name`: Informações sobre o componente.
+    
+  - `inputs`: Lista de inputs necessários para configurar o componente, incluindo chave da API, valor de entrada e o número máximo de resultados.
+    
+4. **Método** `run_model()`:
+  
+  - Constrói o wrapper da API Tavily e executa a busca utilizando o valor de entrada fornecido e o número máximo de resultados. Retorna os dados formatados.
+5. **Método** `build_tool()`:
+  
+  - Constrói e retorna uma instância da ferramenta `Tool` configurada para usar a busca da API Tavily.
+6. **Método** `_build_wrapper()`:
+  
+  - Importa as classes necessárias para construir o wrapper da API Tavily e retorna uma instância de `TavilySearchResults`.
+
+#### O que Instalar
+
+Para usar este código, você precisa instalar as bibliotecas `langchain` e `langchain_community`. Você pode instalá-las usando pip:
+
+bash
+
+Copiar
+
+```
+pip install langchain
+pip install langchain_community
+```
+
+#### Como Executar
+
+1. **Instale as dependências**: Execute os comandos acima no terminal para instalar as bibliotecas necessárias.
+  
+2. **Escreva o código**: Copie e cole o código Python em um arquivo, por exemplo, `tavily_search_component.py`.
+  
+3. **Configure sua chave da API**: Certifique-se de ter a chave da API Tavily configurada corretamente.
+  
+4. **Execute o código**: No terminal, navegue até o diretório onde o arquivo `tavily_search_component.py` está salvo e execute o seguinte comando:
+  
+  ```
+  python tavily_search_component.py
+  ```
+
+
+
